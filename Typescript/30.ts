@@ -10,18 +10,15 @@
 // Requirements: Use explicit TypeScript types for parameters and return value
 
 // Code right here🥪:c
-function Hello(name){
-    try{
-        if(typeof name !== "string"){
-            throw new Error("ชื่อมึงไทป์ผิด");
-        }
-        return(`Hello, ${name}!`);
-        
+function Hello(name: string): string {
+  try {
+    if (typeof name !== "string") {
+      throw new Error("Invalid type: name must be a string");
     }
-    catch(e){
-        return(`Error : ${e}`);
-    }
-    
+    return `Hello, ${name}!`;
+  } catch (e) {
+    return `Error: ${(e as Error).message}`;
+  }
 }
 // -----------------------------------------------
 
@@ -34,23 +31,16 @@ function Hello(name){
 
 // Code right here🥪:
 
-function EvenOrOdd(num){
- try{
-    if (typeof num !== "number"){
-        throw new Error("เลขมึงไทป์ผิด");
+function EvenOrOdd(num: number): string {
+  try {
+    if (typeof num !== "number") {
+      throw new Error("Invalid type: num must be a number");
     }
-    if (num % 2 === 0){
-        return("Even");
-    }
-    else{
-        return("Odd");
-    }
- }
- catch(e){
-
- }
+    return num % 2 === 0 ? "Even" : "Odd";
+  } catch (e) {
+    return `Error: ${(e as Error).message}`;
+  }
 }
-console.log(EvenOrOdd(4));
 
 // -----------------------------------------------
 
@@ -62,16 +52,15 @@ console.log(EvenOrOdd(4));
 // Requirements: Use a loop and TypeScript array type
 
 // Code right here🥪:
-function sum(arr:number[]){
-    let sum = 0
-    for(let i = 0; i < arr.length; i++){
-        sum += arr[i];
-    }
-    return sum;
-    
+function sum(arr: number[]): number {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  return total;
 }
 
-console.log(sum([1,2,3]));
+console.log(sum([1, 2, 3]));
 // -----------------------------------------------
 
 // Day 4: Reverse String
@@ -83,6 +72,21 @@ console.log(sum([1,2,3]));
 
 // Code right here🥪:
 
+function reverse(word) {
+  try {
+    if (typeof word !== "string") {
+      throw new Error("Your Type is wrong");
+    }
+    let reverse = "";
+    for (let i = word.length - 1; i >= 0; i--) {
+      reverse += word[i];
+    }
+    return reverse;
+  } catch (e) {
+    console.log("Error occurs", e);
+  }
+}
+console.log(reverse("Hello"));
 // -----------------------------------------------
 
 // Day 5: Count Vowels
@@ -93,7 +97,6 @@ console.log(sum([1,2,3]));
 // Requirements: Use loop and conditionals
 
 // Code right here🥪:
-
 // -----------------------------------------------
 
 // Day 6: Max Number

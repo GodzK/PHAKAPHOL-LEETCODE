@@ -11,12 +11,12 @@
 function Hello(name) {
     try {
         if (typeof name !== "string") {
-            throw new Error("ชื่อมึงไทป์ผิด");
+            throw new Error("Invalid type: name must be a string");
         }
-        return ("Hello, ".concat(name, "!"));
+        return "Hello, ".concat(name, "!");
     }
     catch (e) {
-        return ("Error : ".concat(e));
+        return "Error: ".concat(e.message);
     }
 }
 // -----------------------------------------------
@@ -30,19 +30,14 @@ function Hello(name) {
 function EvenOrOdd(num) {
     try {
         if (typeof num !== "number") {
-            throw new Error("เลขมึงไทป์ผิด");
+            throw new Error("Invalid type: num must be a number");
         }
-        if (num % 2 === 0) {
-            return ("Even");
-        }
-        else {
-            return ("Odd");
-        }
+        return num % 2 === 0 ? "Even" : "Odd";
     }
     catch (e) {
+        return "Error: ".concat(e.message);
     }
 }
-console.log(EvenOrOdd(4));
 // -----------------------------------------------
 // Day 3: Sum of Numbers
 // Description: Write a function that takes an array of numbers and returns their sum
@@ -52,11 +47,11 @@ console.log(EvenOrOdd(4));
 // Requirements: Use a loop and TypeScript array type
 // Code right here🥪:
 function sum(arr) {
-    var sum = 0;
+    var total = 0;
     for (var i = 0; i < arr.length; i++) {
-        sum += arr[i];
+        total += arr[i];
     }
-    return sum;
+    return total;
 }
 console.log(sum([1, 2, 3]));
 // -----------------------------------------------
@@ -67,6 +62,22 @@ console.log(sum([1, 2, 3]));
 //   Input: "TypeScript" -> Output: "tpircSepyT"
 // Requirements: Use loop or string methods
 // Code right here🥪:
+function reverse(word) {
+    try {
+        if (typeof word !== "string") {
+            throw new Error("Your Type is wrong");
+        }
+        var reverse_1 = "";
+        for (var i = word.length - 1; i >= 0; i--) {
+            reverse_1 += word[i];
+        }
+        return reverse_1;
+    }
+    catch (e) {
+        console.log("Error occurs", e);
+    }
+}
+console.log(reverse("Hello"));
 // -----------------------------------------------
 // Day 5: Count Vowels
 // Description: Write a function that counts vowels (a, e, i, o, u) in a string (case-insensitive)
