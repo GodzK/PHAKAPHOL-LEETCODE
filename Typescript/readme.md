@@ -1,5 +1,5 @@
 โปรแกรม "30 Days of TypeScript" เพื่อฝึกฝนทักษะการเขียนโค้ดใน TypeScript อย่างก้าวกระโดดและมีประสิทธิภาพใน 30 วัน โดยจะเน้นการพัฒนาทักษะพื้นฐานไปจนถึงระดับกลาง-สูง ครอบคลุมหัวข้อสำคัญ เช่น variables, loops, conditionals, functions, arrays, objects, string methods, TypeScript-specific features (types, interfaces, generics) และการแก้ปัญหาแบบ algorithmic
-
+//อย่าลืม ts--init
 แนวคิดการออกแบบ "30 Days of TypeScript"
 โครงสร้าง:
 แบ่งเป็น 30 วัน วันละ 1 โจทย์ (หรือมากกว่านั้นถ้าคุณพร้อม)
