@@ -40,3 +40,13 @@ function search() {
     console.log(`indexof : ${str.indexOf("P")}`);//Case Sensitive
 }
 search()
+
+function CheckNum(nums) {
+    return Number.isInteger(nums)
+}
+function CheckStr(text){
+    return typeof text
+}
+console.log(CheckNum(5));
+console.log(CheckStr("Hello"));
+
