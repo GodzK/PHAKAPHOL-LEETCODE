@@ -163,7 +163,7 @@ function fizzbuzz(times: number) {
 }
 
 
-console.log(fizzbuzz(5));
+
 
 // -----------------------------------------------
 
@@ -176,14 +176,17 @@ console.log(fizzbuzz(5));
 
 // Code right here🥪:
 
-function Capitalize(word:string){
-  let text = word.toLowerCase().split(" ")
-  for (let i = 0; i < word.length ; i++) {
-    
-    
+function Capitalize(word: string) {
+  let text = word.toLowerCase().split(" ");
+  for (let i = 0; i < text.length; i++) {
+    text[i] = text[i][0].toUpperCase() + text[i].slice(1);
   }
+  
+  return text.join(" ");
 }
-console.log(Capitalize("hello world"));
+
+console.log(Capitalize("hELLO wORLD myName is phakaphol"));
+
 // -----------------------------------------------
 
 // Day 9: Remove Duplicates
