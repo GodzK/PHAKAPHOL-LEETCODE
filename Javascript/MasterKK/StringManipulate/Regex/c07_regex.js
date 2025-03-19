@@ -60,3 +60,19 @@ console.log("is",arr, " is Array ?",Array.isArray(arr));
 console.log("Type of",obj, typeof ["hello"]);
 console.log("is",obj, " is Array ?",Array.isArray(arr));
 
+
+console.log("-----ADDING A DATA WITH REGX -------");
+let word1 = "   Firstname Middlename(ถ้ามีก็ใส่ ถ้าไม่มีก็ไม่ใส่)  Lastname  <email.name@gmail.com>";
+// ไม่ต้องcapture ชื่อกลาง 
+let regex1 = /\s*(?<name>[^\s]+)\s+(?:(?<middlename>[^/s]+)\s+)?(?<lastname>[^\s]+)\s+<(?<email>[^@\s]+@gmail.com)>/; // capture เเค่ mail ที่เป็น @gmail.com
+
+/*\s*                       // จะมีช่องว่างหรือไม่ก็ได้ 
+(?<name>[^\s]+)           // กลุ่มชื่อ (จับทุกตัวอักษรจนกว่าจะเจอช่องว่าง)  || [^\s]+ = จับทุกตัวที่ไม่ใช่ช่องว่างเเละมากกว่า 1 
+\s+                       // ช่องว่างอย่างน้อย1ตัว
+(?<lastname>[^\s]+)       // กลุ่มนามสกุล ที่ไม่มีช่องว่างเเละ มากกว่า 1
+\s+                       // ช่องว่างระหว่างนามสกุลกับอีเมล อย่างน้อย 1ตัว
+<(?<email>[^@\s]+@[^\s>]+)> // กลุ่มอีเมล (จับ email ที่อยู่ใน <>) || [^@\s] = ต้องไม่ใช่ @ เเละ whitespace || ตามด้วยอะไรก็ได้ที่นำหน้าด้วย@ 
+ */
+
+let m1 = word1.match(regex1);
+console.log(m1); // ใช้ ?. เพื่อป้องกัน error กรณีไม่ match
