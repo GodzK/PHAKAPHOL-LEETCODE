@@ -28,5 +28,26 @@ function replaceAllNegativeValueWith(ar, increment) {
   }
   return result;
 }
+// console.log(replaceAllNegativeValueWith([1, -2, "Hello", -3], 5));
 
-console.log(replaceAllNegativeValueWith([1, -2, "Hello", -3], 5));
+function arrtest() {
+  let a = new Array("work hard", "work hard", "work hard", "work hard");
+  let b = new Array();
+  b.fill("Hello");
+  console.log(b); // เพิ่มไม่ได้ เพราะว่า ไม่ได้กำหนด space
+  console.log("Make an Empty Array :", a);
+  a.fill("Word1"); //เติมหมด ไม่สนลูกใคร
+  console.log(a);
+  delete a[2 - 1];
+  console.log("Deleting array 2", a);
+  console.log("value ของค่าที่ว่าง = ", a[2 - 1]);
+  console.log("------FOR LOOP(Classic)------");
+  for (let i = 0; i < a.length; i++) {
+    console.log(a[i]);
+  }
+  console.log("------FOR EACH(ignore undefine)-----");
+  a.forEach(i => console.log(i))
+}
+
+
+arrtest();
