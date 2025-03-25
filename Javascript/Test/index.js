@@ -15,9 +15,9 @@ function CapitalizeFirstLetter(word){
     for (let i = 0; i < wordsplit.length; i++) {
         wordsplit[i] = wordsplit[i][0].toUpperCase() + wordsplit[i].slice(1)
     }
-    return wordsplit
+    return wordsplit.join(" ")
 }
-console.log(CapitalizeFirstLetter("PHAKAPHOL aSDASDA sAKI"));
+console.log(CapitalizeFirstLetter("this Will Show upperCase"));
 
 //โจทย์ 3: Find the Longest Word
 function FindTheLongest(word){
@@ -104,3 +104,21 @@ function removespace(word){
     return word.split(" ").join("")
 }
 console.log(removespace("  JavaScript  is   fun "));
+
+
+// Splice Slice Practice
+//Slice
+function ExtractSubstring(word,start,end) {
+    return (word.slice(start,end))
+}
+console.log(ExtractSubstring("hello world", 6, 11));
+
+//Splice
+function spliceTest(arr,index,numToRemove,newElement) {
+    console.log(`ค่าเก่า ${arr}`);
+    const deletetext = arr.splice(index,numToRemove,newElement)
+    console.log(`ค่าเก่า หลัง splice ${arr}`);
+    console.log(`ค่าที่โดนลบ ${deletetext}`);
+    return arr
+}
+console.log(spliceTest([1, 2, 3, 4, 5], 2, 1, 99));
