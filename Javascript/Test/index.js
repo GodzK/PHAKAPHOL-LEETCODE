@@ -105,6 +105,11 @@ function removespace(word){
 }
 console.log(removespace("  JavaScript  is   fun "));
 
+//โจทย์ 11: Check if a String Contains a Substring
+function containSubstr(str,sub){
+    return str.includes(sub)
+}
+console.log(containSubstr("Hello World", "World"));
 
 // Splice Slice Practice
 //Slice
@@ -122,3 +127,13 @@ function spliceTest(arr,index,numToRemove,newElement) {
     return arr
 }
 console.log(spliceTest([1, 2, 3, 4, 5], 2, 1, 99));
+
+const arr2 = [1,2,3,4,5,6,7,8,9]
+console.log(arr2.splice(1,3));
+const text3 = "Hello WOrld"
+console.log(text3.slice(1,3));
+console.log(text3.substring(1,3));
+console.log(arr2);
+
+console.log("Trim");
+console.log("    The  asda world     ".trim());

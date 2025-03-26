@@ -50,3 +50,4 @@ function CheckStr(text){
 console.log(CheckNum(5));
 console.log(CheckStr("Hello"));
 
+
